@@ -3,8 +3,12 @@ import tkinter as tk
 window = tk.Tk()
 window.title("XO Game")
 
-def process(button):
-    print(f"{button} clicked")
+global turn
+turn = "X"
+
+def process(idx):
+    buttons[idx]["bg"] = "red"
+    # print(f"{button} clicked")
 
 
 
@@ -24,6 +28,7 @@ def points():
     player_two_point.grid(row=0, column=1)
 
 def board():
+    global buttons
     buttons = []
     board_frame = tk.Frame(window)
     board_frame.grid(row=2)
