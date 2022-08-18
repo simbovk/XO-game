@@ -3,6 +3,11 @@ import tkinter as tk
 window = tk.Tk()
 window.title("XO Game")
 
+def process(button):
+    print(f"{button} clicked")
+
+
+
 def points():
     name_frame = tk.Frame(window)
     name_frame.grid(row=0)
@@ -28,7 +33,7 @@ def board():
             index = counter
             buttons.append(index)
             buttons[index] = tk.Button(board_frame)
-            buttons[index].config(width=10, height=4, font=("None", 18, "bold"))
+            buttons[index].config(width=10, height=4, font=("None", 18, "bold"), command=lambda idx=index:process(idx))
             buttons[index].grid(row=row, column=column)
             counter += 1
 
