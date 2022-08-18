@@ -57,6 +57,9 @@ def rules():
         show_winner(results[0])
     if results[2] == results[4] == results[6] and results[2] != "":
         show_winner(results[2])
+    if "" not in results:
+        showinfo("Finished", "Draw!")
+        reset()
 
 def show_winner(winner):
     if winner == "X":
