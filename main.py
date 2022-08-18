@@ -7,8 +7,15 @@ global turn
 turn = "X"
 
 def process(idx):
-    buttons[idx]["text"] = turn
-
+    global turn
+    if turn == "X":
+        buttons[idx]["text"] = "X"
+        buttons[idx]["state"] = tk.DISABLED
+        turn = "O"
+    else:
+        buttons[idx]["text"] = "O"
+        buttons[idx]["state"] = tk.DISABLED
+        turn = "X"
 
 
 def points():
