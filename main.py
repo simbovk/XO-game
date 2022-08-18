@@ -15,5 +15,9 @@ def board():
     point_frame.grid(row=1)
     player_one_point = tk.Label(point_frame, text="0", font=("Italic", 16), padx=20)
     player_two_point = tk.Label(point_frame, text="0", font=("Italic", 16), padx=20)
+    player_one_point.grid(row=0, column=0)
+    player_two_point.grid(row=0, column=1)
+
+
 board()
 window.mainloop()
