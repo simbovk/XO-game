@@ -28,9 +28,11 @@ def board():
             index = counter
             buttons.append(index)
             buttons[index] = tk.Button(board_frame)
-            buttons[index].config(width=10, height=10, font=(18, "bold"))
+            buttons[index].config(width=10, height=4, font=("None", 18, "bold"))
             buttons[index].grid(row=row, column=column)
             counter += 1
 
 points()
+board()
+
 window.mainloop()
