@@ -7,8 +7,7 @@ global turn
 turn = "X"
 
 def process(idx):
-    buttons[idx]["bg"] = "red"
-    # print(f"{button} clicked")
+    buttons[idx]["text"] = turn
 
 
 
@@ -38,7 +37,7 @@ def board():
             index = counter
             buttons.append(index)
             buttons[index] = tk.Button(board_frame)
-            buttons[index].config(width=10, height=4, font=("None", 18, "bold"), command=lambda idx=index:process(idx))
+            buttons[index].config(width=10, height=4, font=("None", 18, "bold"), command=lambda idx=index: process(idx))
             buttons[index].grid(row=row, column=column)
             counter += 1
 
