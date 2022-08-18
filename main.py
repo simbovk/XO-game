@@ -41,8 +41,21 @@ def points():
 
 def rules():
     if results[0] == results[1] == results[2] and results[0] != "":
-
-
+        show_winner(results[0])
+    if results[3] == results[4] == results[5] and results[3] != "":
+        show_winner(results[3])
+    if results[6] == results[7] == results[8] and results[6] != "":
+        show_winner(results[6])
+    if results[0] == results[3] == results[6] and results[0] != "":
+        show_winner(results[0])
+    if results[1] == results[4] == results[7] and results[1] != "":
+        show_winner(results[1])
+    if results[2] == results[5] == results[8] and results[2] != "":
+        show_winner(results[2])
+    if results[0] == results[4] == results[8] and results[0] != "":
+        show_winner(results[0])
+    if results[2] == results[4] == results[6] and results[2] != "":
+        show_winner(results[2])
 
 def show_winner(winner):
     if winner == "X":
