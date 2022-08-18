@@ -3,19 +3,23 @@ import tkinter as tk
 window = tk.Tk()
 window.title("XO Game")
 
-global turn
+global turn, results
+results = ["", "", "", "", "", "", "", "", ""]
 turn = "X"
 
 def process(idx):
     global turn
-    if turn == "X":
-        buttons[idx]["text"] = "X"
-        buttons[idx]["state"] = tk.DISABLED
-        turn = "O"
-    else:
-        buttons[idx]["text"] = "O"
-        buttons[idx]["state"] = tk.DISABLED
-        turn = "X"
+    if results[idx] == "":
+        if turn == "X":
+            results[idx] = "X"
+            buttons[idx]["text"] = "X"
+            buttons[idx]["state"] = tk.DISABLED
+            turn = "O"
+        else:
+            results[idx] = "O"
+            buttons[idx]["text"] = "O"
+            buttons[idx]["state"] = tk.DISABLED
+            turn = "X"
 
 
 def points():
@@ -32,6 +36,10 @@ def points():
     player_two_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=50)
     player_one_point.grid(row=0, column=0)
     player_two_point.grid(row=0, column=1)
+#
+# def rules():
+
+
 
 def board():
     global buttons
