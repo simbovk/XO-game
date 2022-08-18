@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter.messagebox import showinfo
+
 
 window = tk.Tk()
 window.title("XO Game")
@@ -20,7 +22,7 @@ def process(idx):
             buttons[idx]["text"] = "O"
             buttons[idx]["state"] = tk.DISABLED
             turn = "X"
-
+        rules()
 
 def points():
     name_frame = tk.Frame(window)
@@ -36,8 +38,17 @@ def points():
     player_two_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=50)
     player_one_point.grid(row=0, column=0)
     player_two_point.grid(row=0, column=1)
-#
-# def rules():
+
+def rules():
+    if results[0] == results[1] == results[2] and results[0] != "":
+
+
+
+def show_winner(winner):
+    if winner == "X":
+        showinfo("Finished" , "Player One Win!")
+    else:
+        showinfo("Finished", "Player Two Win!")
 
 
 
