@@ -9,12 +9,12 @@ def points():
     player_one_label = tk.Label(name_frame, text="player 1", font=("None", 16, "italic"), padx=10)
     player_two_label = tk.Label(name_frame, text="player 2", font=("None", 16, "italic"), padx=10)
     player_one_label.grid(row=0, column=0)
-    player_two_label.grid(row=0, column=2)
+    player_two_label.grid(row=0, column=1)
 
     point_frame = tk.Frame(window)
     point_frame.grid(row=1)
-    player_one_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=20)
-    player_two_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=20)
+    player_one_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=35)
+    player_two_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=50)
     player_one_point.grid(row=0, column=0)
     player_two_point.grid(row=0, column=1)
 
