@@ -62,9 +62,11 @@ def show_winner(winner):
     if winner == "X":
         player_points[0] += 1
         showinfo("Finished", "Player One Win!")
+        reset()
     else:
         player_points[1] += 1
         showinfo("Finished", "Player Two Win!")
+        reset()
 
 
 def board():
@@ -81,6 +83,13 @@ def board():
             buttons[index].config(width=10, height=4, font=("None", 18, "bold"), command=lambda idx=index: process(idx))
             buttons[index].grid(row=row, column=column)
             counter += 1
+
+def reset():
+    global results, turn
+    results = ["", "", "", "", "", "", "", "", ""]
+    turn = "X"
+    points()
+    board()
 
 points()
 board()
