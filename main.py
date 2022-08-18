@@ -3,7 +3,7 @@ import tkinter as tk
 window = tk.Tk()
 window.title("XO Game")
 
-def board():
+def points():
     board_frame = tk.Frame(window)
     board_frame.grid(row=0)
     player_one_label = tk.Label(board_frame, text="player 1", font=("Italic", 16), padx=10)
@@ -18,6 +18,10 @@ def board():
     player_one_point.grid(row=0, column=0)
     player_two_point.grid(row=0, column=1)
 
+def board():
 
-board()
+
+
+
+points()
 window.mainloop()
