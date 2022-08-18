@@ -5,9 +5,10 @@ from tkinter.messagebox import showinfo
 window = tk.Tk()
 window.title("XO Game")
 
-global turn, results
+global turn, results, player_points
 results = ["", "", "", "", "", "", "", "", ""]
 turn = "X"
+player_points = [0, 0]
 
 def process(idx):
     global turn
@@ -34,8 +35,8 @@ def points():
 
     point_frame = tk.Frame(window)
     point_frame.grid(row=1)
-    player_one_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=35)
-    player_two_point = tk.Label(point_frame, text="0", font=("None", 16, "italic"), padx=50)
+    player_one_point = tk.Label(point_frame, text=player_points[0], font=("None", 16, "italic"), padx=35)
+    player_two_point = tk.Label(point_frame, text=player_points[1], font=("None", 16, "italic"), padx=50)
     player_one_point.grid(row=0, column=0)
     player_two_point.grid(row=0, column=1)
 
@@ -59,10 +60,11 @@ def rules():
 
 def show_winner(winner):
     if winner == "X":
-        showinfo("Finished" , "Player One Win!")
+        player_points[0] += 1
+        showinfo("Finished", "Player One Win!")
     else:
+        player_points[1] += 1
         showinfo("Finished", "Player Two Win!")
-
 
 
 def board():
